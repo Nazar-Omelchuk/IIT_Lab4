@@ -1,12 +1,19 @@
 pipeline {
+
     agent any
 
     stages {
-        stage('My-JenkinsBuild-Steps') {
+        stage('1-Test') {
             steps {
                echo "Start"
                echo "Doing something.."
                echo "End"
+            }
+        }
+        stage('2-Build') {
+            steps {
+                sh 'docker build -t botlab4 .'
+                sh 'docker run -p 8778:8778 -t botlab4'
             }
         }
     }
