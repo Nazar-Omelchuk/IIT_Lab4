@@ -12,15 +12,9 @@ pipeline {
         }
         stage('2-Kill') {
             steps {
-               script {
-                    if ($(docker ps -q) == "") {
-                        echo "Ok"
-                    } else {
-                        sh 'docker kill $(docker ps -q)'
-                        sh 'docker rm $(docker ps -a -q)'
-                        sh 'docker rmi $(docker images -q)'
-                    }
-                }
+               sh 'docker kill $(docker ps -q)'
+               sh 'docker rm $(docker ps -a -q)'
+               sh 'docker rmi $(docker images -q)'  
             }
         }
         stage('3-Build') {
