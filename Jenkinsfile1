@@ -6,7 +6,7 @@ pipeline {
         stage('1-Test') {
             steps {
                echo "Start"
-               echo "Doing something.."
+               sh 'docker ls'
                echo "End"
             }
         }
