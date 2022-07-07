@@ -10,12 +10,6 @@ pipeline {
                echo "End"
             }
         }
-        stage("Check Preconditions") {
-            if (!continueBuild) {
-               currentBuild.result = 'ABORTED'
-               error('Stopping early…')
-            }
-        }
         stage('2-Build') {
             steps {
                 sh 'docker build -t botlab4 .'
