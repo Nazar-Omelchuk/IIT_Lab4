@@ -10,13 +10,6 @@ pipeline {
                echo "End"
             }
         }
-        stage('2-Stop') {
-            steps {
-                sh 'docker stop botlab4'
-                sh 'docker rm botlab4'
-                sh 'docker rmi botlab4'
-            }
-        }
         stage('3-Build') {
             steps {
                 sh 'docker build -t botlab4 .'
