@@ -6,5 +6,4 @@ COPY . /usr/src/app/
 
 RUN pip install --user aiogram
 
-EXPOSE 8082
 CMD ["python", "bot.py"]
