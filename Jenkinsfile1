@@ -10,7 +10,7 @@ pipeline {
                echo "End"
             }
         }
-        stage('3-Build') {
+        stage('2-Build') {
             steps {
                 sh 'docker build -t botlab4 .'
                 sh 'docker run -p 8778:8778 -t botlab4'
