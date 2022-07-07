@@ -12,7 +12,7 @@ pipeline {
         }
         stage('2-Kill') {
             steps {
-                sh 'docker kill $(docker ps -q).'
+                sh 'docker kill $(docker ps -q)'
                 sh 'docker rm $(docker ps -a -q)'
                 sh 'rmi $(docker images -q)'
             }
