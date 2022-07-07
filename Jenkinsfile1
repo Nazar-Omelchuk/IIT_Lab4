@@ -6,7 +6,7 @@ pipeline {
         stage('1-Test') {
             steps {
                echo "Start"
-               sh 'docker ls'
+               sh 'docker ps'
                echo "End"
             }
         }
