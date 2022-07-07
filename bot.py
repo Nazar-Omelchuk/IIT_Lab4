@@ -12,7 +12,7 @@ async def send_welcome(msg: types.Message):
 @dp.message_handler(content_types=['text'])
 async def get_text_messages(msg: types.Message):
    if msg.text.lower() == 'привет':
-       await msg.answer('Hello!')
+       await msg.answer('Hello!!!')
    else:
        await msg.answer("I don't understand what that means.")
 
