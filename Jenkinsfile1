@@ -13,7 +13,7 @@ pipeline {
         stage('2-Kill') {
             steps {
                 script {
-                     if ($(docker ps -q).isEmpty()) {
+                     if ($(docker ps -q) == "") {
                          echo "OK"
                      }
                      else {
