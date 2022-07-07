@@ -14,10 +14,17 @@ pipeline {
                 }
             }
         }
-        stage('2-Build') {
+        stage('2-Stop') {
+            steps {
+                sh 'docker stop botlab4'
+                sh 'docker rm botlab4'
+                sh 'docker rmi botlab4'
+            }
+        }
+        stage('3-Build') {
             steps {
                 sh 'docker build -t botlab4 .'
-                sh 'docker run -p 8778:8778 -t botlab4'
+                sh 'docker run -d botlab4'
             }
         }
     }
