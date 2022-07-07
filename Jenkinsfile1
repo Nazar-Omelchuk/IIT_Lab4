@@ -10,11 +10,11 @@ pipeline {
                echo "End"
             }
         }
-        stage('Initialize') {
+        stage('2-Initialize') {
             def dockerHome = tool 'myDocker'
             env.PATH = "${dockerHome}/bin:${env.PATH}"
         }
-        stage('2-Build') {
+        stage('3-Build') {
             steps {
                 sh 'docker build -t botlab4 .'
                 sh 'docker run -p 8778:8778 -t botlab4'
