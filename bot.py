@@ -12,9 +12,9 @@ async def send_welcome(msg: types.Message):
 @dp.message_handler(content_types=['text'])
 async def get_text_messages(msg: types.Message):
    if msg.text.lower() == 'привет':
-       await msg.answer('Привет!!!')
+       await msg.answer('уавыавыавыаыв!!!')
    else:
-       await msg.answer("I don't understand what that means.")
+       await msg.answer("Iаоивіалвіоаві.")
 
 if __name__ == '__main__':
    executor.start_polling(dp)
